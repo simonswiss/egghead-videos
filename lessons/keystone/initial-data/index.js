@@ -8,16 +8,15 @@ const keystone = new Keystone({
   name: "Setting initial data",
   adapter: new Adapter(),
   onConnect: async () => {
-    // Works for this demo, but do not use this technique in production!
+    // This technique works for this demo - don't use this in production
     const cats = await keystone.lists.Cat.adapter.findAll();
-
-    // Only create initidal data if there are no cats
     if (!cats.length) {
+      // Create initial data if there are no cats yet!
       console.log(`
-Creating intial data! 😻😻😻
-`);
-      await keystone.createItems({
-        Cat: [{ name: "Pixel" }, { name: "Felix" }, { name: "Chubby" }]
+  Creating initial data! 😻😻😻 
+      `);
+      keystone.createItems({
+        Cat: [{ name: "Felix" }, { name: "Pixel" }, { name: "Chubby" }]
       });
     }
   }
