@@ -1,0 +1,23 @@
+{
+  "name": "keystone-initial-data",
+  "description": "Setting initial data in Keystone",
+  "private": true,
+  "version": "1.0.0",
+  "author": "simonswiss",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.4.0"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development DISABLE_LOGGING=true keystone dev",
+    "build": "cross-env NODE_ENV=production keystone build",
+    "start": "cross-env NODE_ENV=production keystone start"
+  },
+  "dependencies": {
+    "@keystone-alpha/adapter-mongoose": "^4.0.7",
+    "@keystone-alpha/app-admin-ui": "^5.8.1",
+    "@keystone-alpha/app-graphql": "^8.0.0",
+    "@keystone-alpha/keystone": "^15.1.0",
+    "cross-env": "^5.2.0"
+  }
+}
